@@ -26,8 +26,8 @@ public class LoginController {
 	private CustomerService customerService;
 	
 	@RequestMapping("/login")
-	public String login() {
-		
+	public String login(@ModelAttribute("emp") Employee emp, Model model) {
+		model.addAttribute("emp", emp);
 		return "welcomeEmployee.jsp";
 	}
 	
